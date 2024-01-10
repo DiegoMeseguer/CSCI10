@@ -1,0 +1,1 @@
+Coursework from the CSCI 10 (Intro to Computer Science) course at Santa Clara University
