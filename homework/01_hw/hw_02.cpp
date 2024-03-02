@@ -1,28 +1,41 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
 
 int main() {
 
-	double sweetener(0), weight_m(0), weight_h(0);
-	double mortal_amount(0);
-	double final_mortal_amount(0);
-	const double content(0.001);
+	double sweetener{}, weightMouse{}, weightHuman{};
+	double mortalAmount{};
+	double finalMortalAmount{};
+	constexpr double DEADLY_CONTENT{0.001};
 
-	cout<<"Please enter amount of artificial sweetener needed to kill a mouse: ";
-	cin>>sweetener;
+	std::cout<<"Please enter amount of artificial sweetener needed to kill a mouse: ";
+	std::cin>>sweetener;
 
-	cout<<"Please enter weight of such mouse: ";
-	cin>>weight_m;
+	if(!std::cin) {
+		std::cout<<"Error, invalid input. Please enter a numeric value"<<std::endl;
+		return 0;
+	}
 
-	cout<<"Please enter the weight at which you will stop dieting: ";
-	cin>>weight_h;
+	std::cout<<"Please enter weight of such mouse: ";
+	std::cin>>weightMouse;
 
-	mortal_amount = sweetener * (weight_h/weight_m);
+	if(!std::cin) {
+		std::cout<<"Error, invalid input. Please enter a numeric value"<<std::endl;
+		return 0;
+	}
 
-	final_mortal_amount = mortal_amount / content;
+	std::cout<<"Please enter the weight at which you will stop dieting: ";
+	std::cin>>weightHuman;
 
-	cout<<"It is possible to drink less than "<<final_mortal_amount<<" bottles of diet soda without dying as a result \n";
+	if(!std::cin) {
+		std::cout<<"Error, invalid input. Please enter a numeric value"<<std::endl;
+		return 0;
+	}
 
+	mortalAmount = sweetener * (weightHuman / weightMouse);
+	finalMortalAmount = mortalAmount / DEADLY_CONTENT;
+
+	std::cout<<"It is possible to drink less than "<<finalMortalAmount<<" bottles of diet soda without dying as a result."<<std::endl;
 
 	return 0;
 }
+
